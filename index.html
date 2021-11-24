@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+<body>
+    <script>
+    var xhr = new XMLHttpRequest()
+    xhr.open('GET','https://mock.mengxuegu.com/mock/619de776f720a73ceb75e9a9/neat/neat',true)  //get '/login?usename=jirengu&password=123' 拼接url
+    xhr.send()
+    //  console.log('readyState-start',xhr.readyState)
+    // xhr.addEventListener('readystatechange', function(){
+    //     console.log('redeayState',xhr.readyState)
+    // })
+    xhr.addEventListener('load',function(){
+        if(xhr.status >=200 && xhr.status <=300 || xhr.status === 304) {
+        var data = xhr.responseText
+            console.log(xhr.responseText)
+        }else {
+            console.log('error')
+        }
+        })
+        // xhr.onerror() = function() {
+        //     console.log('error2')
+        // }
+
+
+
+    //     var xhr = new XMLHttpRequest()
+    // xhr.open('POST','./hello.json',true)  
+    // xhr.send('usename=jirengu&password=123')
+    // console.log('readyState-start',xhr.readyState)
+    // xhr.addEventListener('readystatechange', function(){
+    //     console.log('redeayState',xhr.readyState)
+    // })
+    // xhr.addEventListener('load',function(){
+    //     if(xhr.status >=200 && xhr.status <=300 || xhr.status === 304) {
+    //         var data = xhr.responseText
+    //         console.log(data)
+    //     }else {
+    //         console.log('error')
+    //     }
+    //     })
+    //     makeUrl ({name: 'chen',age: 13})
+    //     function makeUrl (obj){
+    //         var arr = []
+    //         for(var key in obj){
+    //             arr.push(key + '=' + obj[key])
+    //         }
+    //         arr.join('&')
+    //     }
+    //     // xhr.onerror() = function() {
+    //     //     console.log('error2')
+    //     // }
+   </script>
+</body>
+</html>

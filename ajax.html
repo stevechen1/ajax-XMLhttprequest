@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+<body>
+    <script>
+        // GET
+        // var xhr = new XMLHttpRequest()
+        // xhr.open('GET','./hello.json',true)
+        // xhr.send()
+        // xhr.addEventListener('load',function(){
+        //     if(xhr.status >= 200 && xhr.status <= 300 || xhr.status === 304){
+        //         console.log(xhr.readyState)
+        //         console.log(xhr)
+        //         var a = makeUrl(JSON.parse(xhr.responseText))
+        //         console.log(a)
+        //     } else {
+        //         console.log('error')
+        //     }
+        // }) 
+        // function makeUrl (obj){
+        //     var arr = []
+        //     for(var key in obj){
+        //         arr.push(key + '=' + obj[key])
+        //     }
+        //     console.log(arr.join('&'))
+        //     return arr.join('&')   
+        // }
+
+        //POST
+        var xhr = new XMLHttpRequest()
+        xhr.open('POST','https://mock.mengxuegu.com/mock/619e1226f720a73ceb75e9dd/pop/pop',true)
+        xhr.send({
+        "name": "jirengu",
+        "age": "19"
+        })
+        xhr.addEventListener('load',function(){
+            if(xhr.status >= 200 && xhr.status <= 300 || xhr.status === 304){
+                var a = makeUrl(JSON.parse(xhr.responseText))
+                console.log(a)
+                console.log(xhr)
+            } else {
+                console.log('error')
+                console.log(xhr.status)
+            }
+        }) 
+        function makeUrl (obj){
+            var arr = []
+            for(var key in obj){
+                arr.push(key + '=' + obj[key])
+            }
+            console.log(arr.join('&'))
+            return arr.join('&')   
+        }
+    </script>
+</body>
+</html>
